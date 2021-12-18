@@ -1,0 +1,399 @@
+/* ---------------------------------------------------------------------
+ RESET CSS (thanks Eric Meyer)
+------------------------------------------------------------------------ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font-weight: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+blockquote {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+img, audio, canvas, video, picture, iframe, embed {
+    max-width: 100% !important;
+}
+
+/* ---------------------------------------------------------------------
+ HTML5 Elements
+------------------------------------------------------------------------ */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main {
+    display: block;
+}
+
+audio, canvas, video, progress, picture {
+    display: inline-block;
+}
+
+template {
+    display: none;
+}
+
+/* ---------------------------------------------------------------------
+ Variables
+------------------------------------------------------------------------ */
+:root {
+    --color-transparent: rgba(0,0,0,0);
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-brand-hot-pink: #e01b84;
+    --color-brand-electric-blue: #12bbf2;
+    --color-brand-charcoal: #0d000d;
+    --color-brand-gray: #808080;
+    --color-brand-concrete: #d5d5d5;
+    --color-brand-offwhite: #edf0f1;
+    --fontFamily-sans: 'Rubik', Helvetica, Arial, sans-serif;
+    --fontFamily-serif: Georgia, Times, Times New Roman, serif;
+    --fontSize-sm: 0.875rem;
+    --fontSize-md: 0.9375rem;
+    --fontSize-lg: 1.250rem;
+    --fontSize-xl: 1.500rem;
+    --fontSize-xxl: 1.750rem;
+    --lineHeight-one: 1;
+    --lineHeight-tight: 1.4;
+    --lineHeight-std: 1.6;
+    --lineHeight-loose: 2;
+}
+
+/* ---------------------------------------------------------------------
+ Base Styles
+------------------------------------------------------------------------ */
+html {
+    background-color: var(--color-brand-charcoal);
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--color-brand-offwhite);
+    color: var(--color-brand-charcoal);
+    font-family: var(--fontFamily-serif);
+    font-size: var(--fontSize-md);
+    line-height: var(--lineHeight-std);
+    font-style: normal;
+    font-weight: normal;
+    overflow-y: scroll;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: var(--color-transparent);
+}
+
+a:hover,
+a:focus,
+a:active {
+    text-decoration: none;
+}
+
+abbr {
+    text-decoration: none;
+}
+
+/* ---------------------------------------------------------------------
+ Helper - isVisuallyHidden
+------------------------------------------------------------------------ */
+.isVisuallyHidden {
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    border: 0 !important;
+    padding: 0 !important;
+    clip: rect(0, 0, 0, 0) !important;
+    clip-path: inset(100%)!important;
+    overflow: hidden !important;
+    position: absolute !important;
+    white-space: nowrap !important;
+}
+
+/* ---------------------------------------------------------------------
+ Helper - Display Types
+------------------------------------------------------------------------ */
+.d-block {
+    display: block;
+}
+
+.d-inline-block {
+    display: inline-block;
+}
+
+.d-inline {
+    display: inline;
+}
+
+/* ---------------------------------------------------------------------
+ Layout - Tier
+------------------------------------------------------------------------ */
+.tier {}
+
+.tier--info {
+    position: sticky;
+    top: 0;
+    z-index: 99999999;
+    background-color: var(--color-brand-charcoal);
+}
+
+.tier--media {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: normal;
+}
+
+.tier--media--hero {
+    background-image: linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.3)),
+                      url("../media/bg-hero.jpg");
+}
+
+/* ---------------------------------------------------------------------
+ Layout - Wrapper
+------------------------------------------------------------------------ */
+.wrapper {
+    box-sizing: border-box;
+    min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ---------------------------------------------------------------------
+ Layout - Blocks
+------------------------------------------------------------------------ */
+.blocks {}
+
+.blocks__item {
+    margin-bottom: 20px;
+}
+
+/* ---------------------------------------------------------------------
+ Component - Infobar
+------------------------------------------------------------------------ */
+.infobar {
+    padding: 14px 0;
+    color: var(--color-white);
+    font-family: var(--fontFamily-sans);
+    font-size: var(--fontSize-sm);
+    line-height: var(--lineHeight-one);
+    text-align: center;
+}
+
+@media (min-width: 560px) {
+    .infobar__list > * {
+        display: inline-block;
+    }
+    
+    .infobar__list > * + * {
+        padding-left: 45px;
+    }
+}
+
+/* ---------------------------------------------------------------------
+ Component - Hero
+------------------------------------------------------------------------ */
+.hero {
+    padding: 40px 20px;
+}
+
+.hero > * {
+    max-width: 240px;
+    margin: 0 auto;
+}
+
+.hero__brand {
+    margin-bottom: 20px;
+}
+
+.hero__lede {
+    text-align: center;
+}
+
+@media (min-width: 520px) {
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero > * {
+        max-width: 400px;
+    }
+}
+
+/* ---------------------------------------------------------------------
+ Component - Section
+------------------------------------------------------------------------ */
+.section {
+    padding: 40px 0;
+}
+
+.section__hd {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.section__bd {}
+
+/* ---------------------------------------------------------------------
+ Component - Feature
+------------------------------------------------------------------------ */
+.feature {
+    position: relative;
+}
+
+.feature__icon {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: var(--color-brand-charcoal);
+    color: var(--color-white);
+    box-shadow: 0 0 0 3px var(--color-brand-offwhite),
+                0 0 0 5px var(--color-brand-hot-pink);
+    transition: all 150ms ease-in;
+}
+
+.feature:hover .feature__icon {
+    box-shadow: 0 0 0 3px var(--color-brand-offwhite),
+            0 0 0 6px var(--color-brand-electric-blue);
+}
+
+.feature__content {
+    margin-left: 25px;
+    padding: 30px 50px 30px 50px;
+    background-color: var(--color-white);
+    box-shadow: 1px 1px 3px var(--color-brand-concrete);
+}
+
+.feature__content__hd {
+    margin-bottom: 15px;
+}
+
+.feature__content__ft {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-brand-concrete);
+}
+
+/* ---------------------------------------------------------------------
+ Component - Badge
+------------------------------------------------------------------------ */
+.badge__icon {
+    display: inline-block;
+    padding-right: 2px;
+}
+
+.badge__text {
+    display: inline-block;
+}
+
+/* ---------------------------------------------------------------------
+ Typography - Headings
+------------------------------------------------------------------------ */
+.hdg {
+    color: inherit;
+    font-family: var(--fontFamily-serif);
+    font-size: inherit;
+    line-height: var(--lineHeight-tight);
+    font-style: normal;
+    font-weight: normal;
+    text-transform: none;
+    letter-spacing: 0;
+}
+
+.hdg--md { font-size: var(--fontSize-md); }
+.hdg--lg { font-size: var(--fontSize-lg); }
+.hdg--xl { font-size: var(--fontSize-xl); }
+.hdg--xxl { font-size: var(--fontSize-xxl); }
+.hdg--flex-lg2xl { font-size: var(--fontSize-lg); }
+
+@media (min-width: 520px) {
+    .hdg--flex-lg2xl { font-size: var(--fontSize-xl); }
+}
+
+/* ---------------------------------------------------------------------
+ Typography - Title
+------------------------------------------------------------------------ */
+.title {
+    color: inherit;
+    font-family: var(--fontFamily-sans);
+    font-size: var(--fontSize-lg);
+    line-height: 1.2;
+    font-style: normal;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* ---------------------------------------------------------------------
+ Typography - Content
+------------------------------------------------------------------------ */
+.content > *:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.content ul {
+    padding-right: 20px;
+    list-style-type: disc;
+}
+
+.content ul li {
+    margin-left: 1.7rem;
+}
+
+/* ---------------------------------------------------------------------
+ Typography - Columns
+------------------------------------------------------------------------ */
+@media (min-width: 520px) {
+    .cols--2 {
+        column-count: 2;
+    }
+}
