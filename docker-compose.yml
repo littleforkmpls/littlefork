@@ -1,0 +1,19 @@
+version: '3.6'
+
+services:
+  web:
+    image: nginx:alpine
+    hostname: web
+    container_name: littlefork.web
+    volumes:
+      - ./app:/var/www/html
+      - ./.docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - 8888:80
+      - 443:443
+    networks:
+      - default
+
+networks:
+  default:
+    driver: bridge
