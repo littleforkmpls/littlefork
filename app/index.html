@@ -50,10 +50,9 @@ $$ |  $$ |$$$$$$$$\ $$$$$$$$\ $$$$$$$$\ $$$$$$  |         $$ |       $$ |    $$$
         <meta name="msapplication-TileColor" content="#edf0f1">
         <meta name="theme-color" content="#edf0f1">
 
-        <!-- Google Fonts -->
+        <!-- Google Fonts (see end of body for async script) -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
 
         <!-- Third Party -->
         <script src="https://kit.fontawesome.com/70d3953f7a.js" crossorigin="anonymous"></script>
@@ -323,6 +322,19 @@ $$ |  $$ |$$$$$$$$\ $$$$$$$$\ $$$$$$$$\ $$$$$$  |         $$ |       $$ |    $$$
                 </div>
             </div>
         </div>
+        <script type="text/javascript">
+            WebFontConfig = {
+                google: { families: [ 'Rubik:400,500' ] }
+            };
+            (function() {
+                var wf = document.createElement('script');
+                wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+                wf.type = 'text/javascript';
+                wf.async = 'true';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(wf, s);
+            })();
+        </script>
         <script type="application/ld+json">
             {
                 "@context":"https://schema.org",
