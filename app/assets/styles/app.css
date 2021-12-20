@@ -173,10 +173,15 @@ abbr {
 .tier {}
 
 .tier--info {
-    position: sticky;
-    top: 0;
-    z-index: 99999999;
     background-color: var(--color-brand-charcoal);
+}
+
+@media (min-width: 560px) {
+    .tier--info {
+        position: sticky;
+        top: 0;
+        z-index: 99999999;
+    }
 }
 
 .tier--media {
@@ -189,6 +194,10 @@ abbr {
 .tier--media--hero {
     background-image: linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.3)),
                       url("../media/bg-hero.jpg");
+}
+
+.tier--white {
+    background-color: var(--color-white);
 }
 
 /* ---------------------------------------------------------------------
@@ -223,11 +232,15 @@ abbr {
     text-align: center;
 }
 
+.infobar__list > * {
+    padding: 7px 0;
+}
+
 @media (min-width: 560px) {
     .infobar__list > * {
         display: inline-block;
     }
-    
+
     .infobar__list > * + * {
         padding-left: 45px;
     }
