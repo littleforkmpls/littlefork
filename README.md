@@ -11,3 +11,10 @@
 1. Make edits
 1. Commit change to source control
 1. Run `cdocker compose down`
+
+## Production Deployment
+
+1. Merge changes from develop branch to main branch
+1. SSH to AWS Production Server
+1. CD to /var/www/little-fork.com
+1. git pull origin main
