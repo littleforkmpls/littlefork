@@ -363,7 +363,7 @@ textarea:focus {
     font-size: var(--fontSize-xs);
     line-height: normal;
     font-weight: 500;
-    color: var(--color-brand-offwhite);
+    color: var(--color-white);
     background: none;
     background-color: var(--color-brand-hot-pink);
     text-align: center;
@@ -374,12 +374,24 @@ textarea:focus {
     white-space: nowrap;
     -webkit-user-select: none;
     user-select: none;
-    transition: all 0.3s linear;
+    transition: all 0.15s linear;
 }
 
 .btn:hover,
 .btn:focus {
 
+}
+
+.btn__icon {
+    display: inline-block;
+}
+.btn:hover .btn__icon {
+    animation: buttonbounce 0.3s alternate ease infinite;
+}
+
+@keyframes buttonbounce {
+    from { transform: translateX(0); }
+    to   { transform: translateX(3px); }
 }
 
 /* ---------------------------------------------------------------------

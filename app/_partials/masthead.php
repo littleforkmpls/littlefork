@@ -24,7 +24,10 @@
             </div>
             <div class="masthead__section masthead__section--cta">
                 <a class="btn" href="/quote/">
-                    Get a Quote
+                    <span class="btn__txt">Get a Quote</span>
+                    <span class="btn__icon" aria-hidden="true">
+                        &nbsp;&raquo;
+                    </span>
                 </a>
             </div>
         </div>
