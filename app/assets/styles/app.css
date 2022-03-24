@@ -1,4 +1,25 @@
 /* ---------------------------------------------------------------------
+ Fonts - (Latin unicode range)
+------------------------------------------------------------------------ */
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/rubik/rubik.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: "Rubik";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/rubik/rubik.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* ---------------------------------------------------------------------
  RESET CSS (thanks Eric Meyer)
 ------------------------------------------------------------------------ */
 html, body, div, span, applet, object, iframe,
@@ -56,6 +77,10 @@ img, audio, canvas, video, picture, iframe, embed {
     max-width: 100% !important;
 }
 
+abbr {
+    text-decoration: none;
+}
+
 /* ---------------------------------------------------------------------
  HTML5 Elements
 ------------------------------------------------------------------------ */
@@ -68,8 +93,8 @@ audio, canvas, video, progress, picture {
     display: inline-block;
 }
 
-template {
-    display: none;
+template, [hidden] {
+    display: none !important;
 }
 
 /* ---------------------------------------------------------------------
@@ -80,6 +105,7 @@ template {
     --color-white: #ffffff;
     --color-black: #000000;
     --color-brand-hot-pink: #e01b84;
+    --color-brand-hot-pink-shadow: #85114d;
     --color-brand-electric-blue: #12bbf2;
     --color-brand-charcoal: #0d000d;
     --color-brand-gray: #808080;
@@ -115,6 +141,7 @@ body {
     font-style: normal;
     font-weight: normal;
     overflow-y: scroll;
+    font-synthesis: none;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -132,8 +159,12 @@ a:active {
     text-decoration: none;
 }
 
-abbr {
-    text-decoration: none;
+a:focus,
+.btn:focus,
+input:focus,
+textarea:focus {
+    outline: 5px auto Highlight !important;
+    outline: 5px auto -webkit-focus-ring-color !important;
 }
 
 /* ---------------------------------------------------------------------
@@ -168,20 +199,65 @@ abbr {
 }
 
 /* ---------------------------------------------------------------------
- Layout - Tier
+ Landmark - Masthead
 ------------------------------------------------------------------------ */
-.tier {}
-
-.tier--info {
-    background-color: var(--color-brand-charcoal);
+.masthead {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 20px 0;
 }
 
-@media (min-width: 560px) {
-    .tier--info {
-        position: sticky;
-        top: 0;
-        z-index: 99999999;
-    }
+.masthead__section--primary {
+    flex: 1;
+}
+
+.masthead__section--secondary {
+    flex-basis: 100px;
+}
+
+/* ---------------------------------------------------------------------
+ Landmark - Navigation
+------------------------------------------------------------------------ */
+.nav {
+    font-family: var(--fontFamily-sans);
+    font-weight: 500;
+}
+
+/* ---------------------------------------------------------------------
+ Layout - Site
+------------------------------------------------------------------------ */
+.site {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.site__masthead {
+    position: sticky;
+    top: 0;
+    z-index: 1337;
+}
+
+.site__main {
+    flex: 1;
+    min-height: 200000px;
+}
+
+.site__footer {
+
+}
+
+/* ---------------------------------------------------------------------
+ Layout - Tier
+------------------------------------------------------------------------ */
+.tier {
+
+}
+
+.tier--charcoal {
+    background-color: var(--color-brand-charcoal);
+    color: var(--color-brand-offwhite);
 }
 
 .tier--media {
@@ -196,54 +272,15 @@ abbr {
                       url("../media/bg-hero.jpg");
 }
 
-.tier--white {
-    background-color: var(--color-white);
-}
-
 /* ---------------------------------------------------------------------
  Layout - Wrapper
 ------------------------------------------------------------------------ */
 .wrapper {
     box-sizing: border-box;
     min-width: 320px;
-    max-width: 640px;
+    max-width: 960px;
     margin: 0 auto;
     padding: 0 20px;
-}
-
-/* ---------------------------------------------------------------------
- Layout - Blocks
------------------------------------------------------------------------- */
-.blocks {}
-
-.blocks__item {
-    margin-bottom: 20px;
-}
-
-/* ---------------------------------------------------------------------
- Component - Infobar
------------------------------------------------------------------------- */
-.infobar {
-    padding: 14px 0;
-    color: var(--color-white);
-    font-family: var(--fontFamily-sans);
-    font-size: var(--fontSize-sm);
-    line-height: var(--lineHeight-one);
-    text-align: center;
-}
-
-.infobar__list > * {
-    padding: 7px 0;
-}
-
-@media (min-width: 560px) {
-    .infobar__list > * {
-        display: inline-block;
-    }
-
-    .infobar__list > * + * {
-        padding-left: 45px;
-    }
 }
 
 /* ---------------------------------------------------------------------
@@ -277,136 +314,85 @@ abbr {
 }
 
 /* ---------------------------------------------------------------------
- Component - Section
+ Repeater - Link List
 ------------------------------------------------------------------------ */
-.section {
-    padding: 40px 0;
+.linkList {
+    display: flex;
+    flex-flow: row nowrap;
 }
 
-.section__hd {
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-.section__bd {}
-
-/* ---------------------------------------------------------------------
- Component - Feature
------------------------------------------------------------------------- */
-.feature {
-    position: relative;
-}
-
-.feature__icon {
-    position: absolute;
-    top: 35px;
-    left: 0;
-    height: 50px;
-    width: 50px;
-    line-height: 50px;
-    text-align: center;
-    border-radius: 50%;
-    background-color: var(--color-brand-charcoal);
-    color: var(--color-white);
-    box-shadow: 0 0 0 3px var(--color-brand-offwhite),
-                0 0 0 5px var(--color-brand-hot-pink);
-    transition: all 150ms ease-in;
-}
-
-.feature:hover .feature__icon {
-    box-shadow: 0 0 0 3px var(--color-brand-offwhite),
-            0 0 0 6px var(--color-brand-electric-blue);
-}
-
-.feature__content {
-    margin-left: 25px;
-    padding: 30px 50px 30px 50px;
-    background-color: var(--color-white);
-    box-shadow: 1px 1px 3px var(--color-brand-concrete);
-}
-
-.feature__content__hd {
-    margin-bottom: 15px;
-}
-
-.feature__content__ft {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid var(--color-brand-concrete);
+.linkList > * + * {
+    padding-left: 25px;
 }
 
 /* ---------------------------------------------------------------------
- Component - Badge
+ Content - Button
 ------------------------------------------------------------------------ */
-.badge__icon {
+.btn {
     display: inline-block;
-    padding-right: 2px;
+    padding: 7px 18px;
+    margin: 0;
+    border: 0;
+    border-radius: 30px;
+    box-shadow: 0 3px 0 1px var(--color-brand-hot-pink-shadow);
+    font-family: var(--fontFamily-sans);
+    font-size: var(--fontSize-md);
+    line-height: normal;
+    font-weight: 500;
+    color: var(--color-brand-offwhite);
+    background: none;
+    background-color: var(--color-brand-hot-pink);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    vertical-align: middle;
+    cursor: pointer;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: all 0.3s linear;
 }
 
-.badge__text {
-    display: inline-block;
+.btn:hover,
+.btn:focus {
+
 }
 
 /* ---------------------------------------------------------------------
- Typography - Headings
+ Typography - Text
 ------------------------------------------------------------------------ */
-.hdg {
+.txt {
     color: inherit;
     font-family: var(--fontFamily-serif);
-    font-size: inherit;
-    line-height: var(--lineHeight-tight);
+    font-size: var(--fontSize-md);
+    line-height: var(--lineHeight-std);
     font-style: normal;
     font-weight: normal;
+    font-synthesis: initial;
+    text-transform: inherit;
+}
+
+/* headings */
+.txt--hdg {
+    font-family: var(--fontFamily-serif);
+    line-height: var(--lineHeight-tight);
     text-transform: none;
     letter-spacing: 0;
 }
 
-.hdg--md { font-size: var(--fontSize-md); }
-.hdg--lg { font-size: var(--fontSize-lg); }
-.hdg--xl { font-size: var(--fontSize-xl); }
-.hdg--xxl { font-size: var(--fontSize-xxl); }
-.hdg--flex-lg2xl { font-size: var(--fontSize-lg); }
+/* Sizes */
+.txt--size-sm { font-size: var(--fontSize-sm); }
+.txt--size-md { font-size: var(--fontSize-md); }
+.txt--size-lg { font-size: var(--fontSize-lg); }
+.txt--size-xl { font-size: var(--fontSize-xl); }
+.txt--size-xxl { font-size: var(--fontSize-xxl); }
 
+.txt--flex-lg2xl { font-size: var(--fontSize-lg); }
 @media (min-width: 520px) {
-    .hdg--flex-lg2xl { font-size: var(--fontSize-xl); }
+    .txt--flex-lg2xl { font-size: var(--fontSize-xl); }
 }
 
-/* ---------------------------------------------------------------------
- Typography - Title
------------------------------------------------------------------------- */
-.title {
-    color: inherit;
-    font-family: var(--fontFamily-sans);
-    font-size: var(--fontSize-lg);
-    line-height: 1.2;
-    font-style: normal;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+/* Colors */
+.txt--color-charcoal { color: var(--color-brand-charcoal); }
+.txt--color-offwhite { color: var(--color-brand-offwhite); }
 
-
-/* ---------------------------------------------------------------------
- Typography - Content
------------------------------------------------------------------------- */
-.content > *:not(:last-child) {
-    margin-bottom: 1rem;
-}
-
-.content ul {
-    padding-right: 20px;
-    list-style-type: disc;
-}
-
-.content ul li {
-    margin-left: 1.7rem;
-}
-
-/* ---------------------------------------------------------------------
- Typography - Columns
------------------------------------------------------------------------- */
-@media (min-width: 520px) {
-    .cols--2 {
-        column-count: 2;
-    }
-}
