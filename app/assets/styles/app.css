@@ -113,11 +113,12 @@ template, [hidden] {
     --color-brand-offwhite: #edf0f1;
     --fontFamily-sans: 'Rubik', Helvetica, Arial, sans-serif;
     --fontFamily-serif: Georgia, Times, Times New Roman, serif;
-    --fontSize-sm: 0.875rem;
-    --fontSize-md: 0.9375rem;
-    --fontSize-lg: 1.250rem;
-    --fontSize-xl: 1.500rem;
-    --fontSize-xxl: 1.750rem;
+    --fontSize-xs: 14px;
+    --fontSize-xs: 15px;
+    --fontSize-md: 16px;
+    --fontSize-lg: 20px;
+    --fontSize-xl: 24px;
+    --fontSize-xxl: 28px;
     --lineHeight-one: 1;
     --lineHeight-tight: 1.4;
     --lineHeight-std: 1.6;
@@ -221,7 +222,32 @@ textarea:focus {
 ------------------------------------------------------------------------ */
 .nav {
     font-family: var(--fontFamily-sans);
+    font-size: var(--fontSize-sm);
     font-weight: 500;
+}
+
+.nav a {
+    display: inline-block;
+    position: relative;
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--color-brand-hot-pink);
+    transform-origin: bottom left;
+    transition: transform 0.2s ease-out;
+}
+
+.nav a:hover::after,
+.nav a:focus::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 /* ---------------------------------------------------------------------
@@ -322,7 +348,7 @@ textarea:focus {
 }
 
 .linkList > * + * {
-    padding-left: 25px;
+    padding-left: 30px;
 }
 
 /* ---------------------------------------------------------------------
@@ -330,13 +356,13 @@ textarea:focus {
 ------------------------------------------------------------------------ */
 .btn {
     display: inline-block;
-    padding: 7px 18px;
+    padding: 7px 20px;
     margin: 0;
     border: 0;
     border-radius: 30px;
     box-shadow: 0 3px 0 1px var(--color-brand-hot-pink-shadow);
     font-family: var(--fontFamily-sans);
-    font-size: var(--fontSize-md);
+    font-size: var(--fontSize-xs);
     line-height: normal;
     font-weight: 500;
     color: var(--color-brand-offwhite);
