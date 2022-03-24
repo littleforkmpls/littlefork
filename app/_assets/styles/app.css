@@ -161,7 +161,7 @@ a:active {
 }
 
 a:focus,
-.btn:focus,
+button:focus,
 input:focus,
 textarea:focus {
     outline: 5px auto Highlight !important;

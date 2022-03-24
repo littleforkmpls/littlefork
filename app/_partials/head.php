@@ -21,3 +21,25 @@
         <link rel="stylesheet" media="screen and (min-width: 1em)" href="<?php echo $root_url; ?>_assets/third-party/aos/aos.min.css" />
         <script src="<?php echo $root_url; ?>_assets/third-party/aos/aos.min.js"></script>
         <script defer data-domain="little-fork.com" src="https://plausible.io/js/plausible.js"></script>
+
+        <!-- SEO -->
+        <title><?php echo $page_title; ?></title>
+        <meta name="description" content="<?php echo $page_description; ?>" />
+        <link rel="canonical" href="<?php echo $page_url; ?>" />
+        <link rel="shortlink" href="<?php echo $page_url; ?>" />
+
+        <!-- OpenGraph -->
+        <meta property="og:url" content="<?php echo $page_url; ?>" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="<?php echo $page_title; ?>" />
+        <meta property="og:description" content="<?php echo $page_description; ?>" />
+        <meta property="og:image" content="https://little-fork.com/assets/media/little-fork-og-share.png" />
+        <meta property="og:image:alt" content="" />
+        <meta property="og:locale" content="en_US" />
+
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="<?php echo $page_title; ?>">
+        <meta name="twitter:description" content="<?php echo $page_description; ?>">
+        <meta name="twitter:image" content="https://little-fork.com/assets/media/little-fork-twitter-share.png">
+        <meta name="twitter:image:alt" content="">
