@@ -15,9 +15,9 @@
         <meta name="theme-color" content="#edf0f1">
 
         <!-- CSS -->
-        <link rel="stylesheet" media="screen and (min-width: 1em)" href="<?php echo $root_url; ?>assets/styles/app.css?v=<?php echo $version; ?>" />
+        <link rel="stylesheet" media="screen and (min-width: 1em)" href="<?php echo $root_url; ?>_assets/styles/app.css?v=<?php echo $version; ?>" />
 
         <!-- Third Party -->
-        <link rel="stylesheet" media="screen and (min-width: 1em)" href="<?php echo $root_url; ?>assets/third-party/aos/aos.min.css" />
-        <script src="<?php echo $root_url; ?>assets/third-party/aos/aos.min.js"></script>
+        <link rel="stylesheet" media="screen and (min-width: 1em)" href="<?php echo $root_url; ?>_assets/third-party/aos/aos.min.css" />
+        <script src="<?php echo $root_url; ?>_assets/third-party/aos/aos.min.js"></script>
         <script defer data-domain="little-fork.com" src="https://plausible.io/js/plausible.js"></script>

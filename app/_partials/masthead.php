@@ -1,29 +1,29 @@
 <div class="tier tier--charcoal">
     <div class="wrapper">
         <div class="masthead" role="banner">
-            <div class="masthead__section masthead__section--primary">
+            <div class="masthead__section masthead__section--nav">
                 <div class="nav" role="navigation">
-                    <ul class="linkList">
-                        <li>
-                            <a href="#">Home</a>
+                    <ul class="nav__list">
+                        <li class="nav__list__item">
+                            <a href="/">Home</a>
                         </li>
-                        <li>
-                            <a href="#">Services</a>
+                        <li class="nav__list__item">
+                            <a href="/services/">Services</a>
                         </li>
-                        <li>
-                            <a href="#">Case Studies</a>
+                        <li class="nav__list__item">
+                            <a href="/case-studies/">Case Studies</a>
                         </li>
-                        <li>
-                            <a href="#">About</a>
+                        <li class="nav__list__item">
+                            <a href="/about/">About</a>
                         </li>
-                        <li>
-                            <a href="#">Contact</a>
+                        <li class="nav__list__item">
+                            <a href="/contact/">Contact</a>
                         </li>
                     </ul>
                 </div>
             </div>
-            <div class="masthead__section masthead__section--secondary">
-                <a class="btn" href="#">
+            <div class="masthead__section masthead__section--cta">
+                <a class="btn" href="/quote/">
                     Get a Quote
                 </a>
             </div>

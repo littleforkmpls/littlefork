@@ -1,4 +1,4 @@
-<script src="<?php echo $root_url; ?>assets/scripts/app.js?v=<?php echo $version; ?>"></script>
+<script src="<?php echo $root_url; ?>_assets/scripts/app.js?v=<?php echo $version; ?>"></script>
 <script type="application/ld+json">
     {
         "@context":"https://schema.org",

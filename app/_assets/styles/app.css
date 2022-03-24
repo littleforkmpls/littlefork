@@ -209,12 +209,13 @@ textarea:focus {
     padding: 20px 0;
 }
 
-.masthead__section--primary {
+.masthead__section--nav {
     flex: 1;
 }
 
-.masthead__section--secondary {
-    flex-basis: 100px;
+.masthead__section--cta {
+    flex-basis: 150px;
+    text-align: right;
 }
 
 /* ---------------------------------------------------------------------
@@ -224,6 +225,15 @@ textarea:focus {
     font-family: var(--fontFamily-sans);
     font-size: var(--fontSize-sm);
     font-weight: 500;
+}
+
+.nav__list {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.nav__list > * + * {
+    padding-left: 30px;
 }
 
 .nav a {
@@ -267,7 +277,7 @@ textarea:focus {
 
 .site__main {
     flex: 1;
-    min-height: 200000px;
+    min-height: 2500px;
 }
 
 .site__footer {
@@ -337,18 +347,6 @@ textarea:focus {
     .hero > * {
         max-width: 400px;
     }
-}
-
-/* ---------------------------------------------------------------------
- Repeater - Link List
------------------------------------------------------------------------- */
-.linkList {
-    display: flex;
-    flex-flow: row nowrap;
-}
-
-.linkList > * + * {
-    padding-left: 30px;
 }
 
 /* ---------------------------------------------------------------------
