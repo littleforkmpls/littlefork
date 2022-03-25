@@ -147,6 +147,10 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+body.isLocked {
+    overflow: hidden;
+}
+
 a {
     color: inherit;
     text-decoration: none;
@@ -223,17 +227,14 @@ textarea:focus {
 ------------------------------------------------------------------------ */
 .nav {
     font-family: var(--fontFamily-sans);
-    font-size: var(--fontSize-sm);
+    font-size: var(--fontSize-xl);
     font-weight: 500;
 }
 
-.nav__list {
-    display: flex;
-    flex-flow: row nowrap;
-}
-
-.nav__list > * + * {
-    padding-left: 30px;
+.nav__toggle {
+    width: 40px;
+    height: 40px;
+    line-height: 1;
 }
 
 .nav a {
@@ -241,23 +242,88 @@ textarea:focus {
     position: relative;
 }
 
-.nav a::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: var(--color-brand-hot-pink);
-    transform-origin: bottom left;
-    transition: transform 0.2s ease-out;
+@media (max-width: 768px) {
+    .nav__area__list > * + * {
+        padding-top: 20px;
+    }
+
+    .nav__area {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 0;
+        padding: 20px;
+        background-color: var(--color-brand-charcoal);
+        overflow: hidden;
+        visibility: hidden;
+        transition: height 1s cubic-bezier(0.19, 1, 0.22, 1), 0.5s top, 1.5s visibility;
+        z-index: -1;
+    }
+
+    .nav__area.isVisible {
+        top: 65px;
+        height: calc(100% - 100px); /* top + p-bot + p-top */
+        overflow: auto;
+        visibility: visible;
+    }
+
+    .nav__area a {
+        opacity: 0;
+        transition: opacity 0.5s ease-in, color 0.2s linear;
+    }
+
+    .nav__area.isVisible a {
+        opacity: 1;
+    }
+
+    .nav__area a:hover,
+    .nav__area a:focus {
+        color: var(--color-brand-hot-pink);
+    }
 }
 
-.nav a:hover::after,
-.nav a:focus::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
+@media (min-width: 769px) {
+    .nav {
+        font-size: var(--fontSize-sm);
+    }
+
+    .nav__toggle {
+        display: none;
+    }
+
+    .nav__area {
+        display: block;
+    }
+
+    .nav__area__list {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    .nav__area__list > * + * {
+        padding-left: 30px;
+    }
+
+    .nav a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: var(--color-brand-hot-pink);
+        transform-origin: bottom left;
+        transition: transform 0.2s ease-out;
+    }
+
+    .nav a:hover::after,
+    .nav a:focus::after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+
 }
 
 /* ---------------------------------------------------------------------
@@ -317,6 +383,43 @@ textarea:focus {
     max-width: 960px;
     margin: 0 auto;
     padding: 0 20px;
+}
+
+/* ---------------------------------------------------------------------
+ Component - Hamburger
+------------------------------------------------------------------------ */
+.hamburger {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+
+    position: relative;
+    height: 40px;
+    width: 40px;
+}
+
+.hamburger__line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: 2px;
+    background-color: var(--color-brand-offwhite);
+    transition: transform 0.2s linear;
+}
+
+.hamburger__line--top {
+    top: 11px;
+}
+
+.hamburger__line--mid {
+    top: 19px;
+}
+
+.hamburger__line--bot {
+    top: 27px;
 }
 
 /* ---------------------------------------------------------------------
@@ -385,7 +488,8 @@ textarea:focus {
 .btn__icon {
     display: inline-block;
 }
-.btn:hover .btn__icon {
+.btn:hover .btn__icon,
+.btn:focus .btn__icon {
     animation: buttonbounce 0.3s alternate ease infinite;
 }
 
