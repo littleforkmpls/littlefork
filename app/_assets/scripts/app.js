@@ -22,9 +22,11 @@ document.addEventListener("DOMContentLoaded", function() {
         if (navIsVisible === 'false') {
             // nav is hidden and will be visible
             navToggleTrigger.setAttribute('aria-expanded','true');
+            navToggleTrigger.classList.add('hamburger--isCloseButton');
         } else {
             // nav is visible and will be hidden
             navToggleTrigger.setAttribute('aria-expanded','false');
+            navToggleTrigger.classList.remove('hamburger--isCloseButton');
         }
 
         body.classList.toggle('isLocked');

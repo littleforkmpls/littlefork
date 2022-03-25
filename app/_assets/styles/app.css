@@ -164,14 +164,6 @@ a:active {
     text-decoration: none;
 }
 
-a:focus,
-button:focus,
-input:focus,
-textarea:focus {
-    outline: 5px auto Highlight !important;
-    outline: 5px auto -webkit-focus-ring-color !important;
-}
-
 /* ---------------------------------------------------------------------
  Helper - isVisuallyHidden
 ------------------------------------------------------------------------ */
@@ -319,7 +311,8 @@ textarea:focus {
     }
 
     .nav a:hover::after,
-    .nav a:focus::after {
+    .nav a:focus::after,
+    .nav a.isActive::after {
       transform: scaleX(1);
       transform-origin: bottom left;
     }
@@ -403,23 +396,41 @@ textarea:focus {
 .hamburger__line {
     position: absolute;
     left: 0;
-    right: 0;
+    width: 40px;
     height: 3px;
     border-radius: 2px;
     background-color: var(--color-brand-offwhite);
     transition: transform 0.2s linear;
+    transform: rotate(0deg);
+    transform-origin: left center;
 }
 
 .hamburger__line--top {
     top: 11px;
+    transition: transform 0.3s ease-in;
 }
 
 .hamburger__line--mid {
     top: 19px;
+    transition: transform 0.3s linear, opacity 0.2s;
 }
 
 .hamburger__line--bot {
     top: 27px;
+    transition: transform 0.3s ease-in;
+}
+
+.hamburger--isCloseButton .hamburger__line--top {
+    transform: rotate(45deg) translateY(-8px);
+}
+
+.hamburger--isCloseButton .hamburger__line--mid {
+    opacity: 0;
+    transform: translateX(-70px);
+}
+
+.hamburger--isCloseButton .hamburger__line--bot {
+    transform: rotate(-45deg) translateY(8px);
 }
 
 /* ---------------------------------------------------------------------
