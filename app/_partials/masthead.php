@@ -17,9 +17,6 @@
                     <div class="nav__area" id="js-navToggleTarget">
                         <ul class="nav__area__list">
                             <li class="nav__area__list__item">
-                                <a <?php if (!$initial_url_segment) { ?> class="isActive"<?php } ?> href="/">Home</a>
-                            </li>
-                            <li class="nav__area__list__item">
                                 <a <?php if ($initial_url_segment == 'services') { ?> class="isActive"<?php } ?>href="/services/">Services</a>
                             </li>
                             <li class="nav__area__list__item">

@@ -16,26 +16,32 @@
                 <?php require($abs_path . '_partials/masthead.php'); ?>
             </div>
             <div class="site__main">
+
+                <!-- HERO -->
                 <div class="tier tier--media tier--media--hero">
                     <div class="wrapper">
                         <div class="hero">
-                            <div class="hero__brand">
+                            <div class="hero__title hero__title--hasLogo">
                                 <h1 class="isVisuallyHidden">Little Fork</h1>
                                 <div data-aos="fade-left" data-aos-delay="300">
-                                    <picture class="d-block">
-                                        <source srcset="<?php echo $root_url; ?>_assets/brand/logo-horizontal.svg" type="image/svg+xml" media="(min-width: 520px)" />
+                                    <picture>
+                                        <source srcset="<?php echo $root_url; ?>_assets/brand/logo-horizontal.svg" type="image/svg+xml" media="(min-width: 560px)" />
                                         <img src="<?php echo $root_url; ?>_assets/brand/logo-vertical.svg" alt="Little Fork" />
                                     </picture>
                                 </div>
                             </div>
                             <div class="hero__lede">
                                 <div data-aos="fade-right" data-aos-delay="300">
-                                    <h2 class="txt txt--flex-lg2xl">A tiny web design &amp; development company that brings big ideas to life.</h2>
+                                    <h2 class="txt txt--flex-lg2xl">
+                                        <span class="d-block d-block--alt">A tiny web design &amp; development</span>
+                                        <span class="d-block d-block--alt">company that brings big ideas to life.</span>
+                                    </h2>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
             <div class="site__footer">
                 <?php require($abs_path . '_partials/footer.php'); ?>

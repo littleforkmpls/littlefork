@@ -2,21 +2,39 @@
  Fonts - (Latin unicode range)
 ------------------------------------------------------------------------ */
 @font-face {
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/rubik/rubik.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../fonts/rubik/rubik.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-  font-family: "Rubik";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("../fonts/rubik/rubik.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("../fonts/rubik/rubik.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("../fonts/rubik/rubik.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url("../fonts/rubik/rubik.woff2") format("woff2");
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 /* ---------------------------------------------------------------------
@@ -111,14 +129,16 @@ template, [hidden] {
     --color-brand-gray: #808080;
     --color-brand-concrete: #d5d5d5;
     --color-brand-offwhite: #edf0f1;
-    --fontFamily-sans: 'Rubik', Helvetica, Arial, sans-serif;
+    --fontFamily-sans: "Rubik", Helvetica, Arial, serif;
     --fontFamily-serif: Georgia, Times, Times New Roman, serif;
-    --fontSize-xs: 14px;
     --fontSize-xs: 15px;
     --fontSize-md: 16px;
     --fontSize-lg: 20px;
     --fontSize-xl: 24px;
     --fontSize-xxl: 28px;
+    --fontSize-xxxl: 36px;
+    --fontSize-huge: 48px;
+    --fontSize-mega: 60px;
     --lineHeight-one: 1;
     --lineHeight-tight: 1.4;
     --lineHeight-std: 1.6;
@@ -185,6 +205,12 @@ a:active {
 ------------------------------------------------------------------------ */
 .d-block {
     display: block;
+}
+
+@media (max-width: 400px) {
+    .d-block--alt {
+         display: inline;
+    }
 }
 
 .d-inline-block {
@@ -438,28 +464,43 @@ a:active {
 ------------------------------------------------------------------------ */
 .hero {
     padding: 40px 20px;
+    min-height: 280px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
-.hero > * {
-    max-width: 240px;
-    margin: 0 auto;
-}
-
-.hero__brand {
+.hero__title {
+    text-align: center;
     margin-bottom: 20px;
+}
+
+.hero__title--hasLogo picture {
+    width: 240px;
 }
 
 .hero__lede {
     text-align: center;
 }
 
-@media (min-width: 520px) {
+@media (min-width: 560px) {
     .hero {
-        padding: 80px 20px;
+        min-height: 300px;
     }
 
-    .hero > * {
-        max-width: 400px;
+    .hero__title--hasLogo picture {
+        width: 400px;
+    }
+}
+
+@media (min-width: 960px) {
+    .hero {
+        min-height: 320px;
+    }
+
+    .hero__title {
+        margin-bottom: 30px;
     }
 }
 
@@ -523,6 +564,32 @@ a:active {
     text-transform: inherit;
 }
 
+/* title */
+.txt--title {
+    color: var(--color-brand-charcoal);
+    font-family: var(--fontFamily-sans);
+    font-weight: 700;
+    font-size: var(--fontSize-xxxl);
+    line-height: var(--lineHeight-one);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: -3px 2px 0 rgba(224,27,132,0.6), 2px -1px 0 rgba(18,187,242,0.6);
+}
+
+@media (min-width: 560px) {
+    .txt--title {
+        font-size: var(--fontSize-huge);
+        text-shadow: -4px 3px 0 rgba(224,27,132,0.6), 3px -2px 0 rgba(18,187,242,0.6);
+    }
+}
+
+@media (min-width: 960px) {
+    .txt--title {
+        font-size: var(--fontSize-mega);
+        text-shadow: -5px 4px 0 rgba(224,27,132,0.6), 4px -3px 0 rgba(18,187,242,0.6);
+    }
+}
+
 /* headings */
 .txt--hdg {
     font-family: var(--fontFamily-serif);
@@ -531,15 +598,18 @@ a:active {
     letter-spacing: 0;
 }
 
-/* Sizes */
+/* Fixed Sizes */
 .txt--size-sm { font-size: var(--fontSize-sm); }
 .txt--size-md { font-size: var(--fontSize-md); }
 .txt--size-lg { font-size: var(--fontSize-lg); }
 .txt--size-xl { font-size: var(--fontSize-xl); }
 .txt--size-xxl { font-size: var(--fontSize-xxl); }
 
+/* Flex Sizes */
+.txt--flex-md2lg { font-size: var(--fontSize-md); }
 .txt--flex-lg2xl { font-size: var(--fontSize-lg); }
-@media (min-width: 520px) {
+@media (min-width: 560px) {
+    .txt--flex-md2lg { font-size: var(--fontSize-lg); }
     .txt--flex-lg2xl { font-size: var(--fontSize-xl); }
 }
 
