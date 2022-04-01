@@ -37,6 +37,61 @@
                     </div>
                 </div>
 
+                <!-- PORTFOLIO -->
+                <div class="tier tier--offwhite">
+                    <div class="wrapper">
+                        <div class="section">
+                            <div class="section__hd">
+                                <h2>Projects</h2>
+                            </div>
+                            <div class="section__bd">
+                                <div class="collection">
+                                    <div class="collection__item">
+                                        The Good Silver Steak Co.
+                                        Ecommerce, BigCommerce, Startup, Steak, Operations
+                                    </div>
+                                    <div class="collection__item">
+                                        North Star Story Map
+                                        WordPress, CMS, Non-Profit, AIA, MHS, Mill City
+                                    </div>
+                                    <div class="collection__item">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LOGO SOUP -->
+                <div class="tier">
+                    <div class="wrapper">
+                        <div class="section">
+                            <div class="section__hd">
+                                <h2>Companies we work with</h2>
+                            </div>
+                            <div class="section__bd">
+                                <ul>
+                                    <li>AIA Minnesota</li>
+                                    <li>Fellow, Inc</li>
+                                    <li>Fortified Branding</li>
+                                    <li>The Hunt Agency</li>
+                                    <li>More Leads Online</li>
+                                    <li>Parqa Marketing</li>
+                                    <li>Sorted Content</li>
+                                    <li>Silver Creek Equity</li>
+                                    <li>Straight to Hell Apparel</li>
+                                    <li>The Good Silver Steak Co.</li>
+                                    <li>Triage Co</li>
+                                    <li>Wattle & Daub</li>
+                                    <li>WeCreative</li>
+                                    <li>Wit & Delight</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="site__footer">
                 <?php require($abs_path . '_partials/footer.php'); ?>

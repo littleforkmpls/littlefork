@@ -362,7 +362,6 @@ a:active {
 
 .site__main {
     flex: 1;
-    min-height: 2500px;
 }
 
 .site__footer {
@@ -379,6 +378,10 @@ a:active {
 .tier--charcoal {
     background-color: var(--color-brand-charcoal);
     color: var(--color-brand-offwhite);
+}
+
+.tier--offwhite {
+    background-color: var(--color-brand-offwhite);
 }
 
 .tier--media {
