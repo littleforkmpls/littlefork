@@ -4,7 +4,7 @@
 
         <!-- Resource Hints -->
         <link rel="preconnect" href="https://plausible.io" />
-        <link rel="preconnect" href="https://kit.fontawesome.com" />
+        <link rel="preconnect" href="https://js.hsforms.net" />
 
         <!-- Favicons from https://realfavicongenerator.net -->
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -21,7 +21,6 @@
         <!-- Third Party -->
         <link rel="stylesheet" media="screen and (min-width: 1em)" href="<?php echo $root_url; ?>_assets/third-party/aos/aos.min.css" />
         <script src="<?php echo $root_url; ?>_assets/third-party/aos/aos.min.js"></script>
-        <script defer src="https://kit.fontawesome.com/70d3953f7a.js" crossorigin="anonymous"></script>
         <?php if ($mode !== 'dev') { ?><script defer data-domain="little-fork.com" src="https://plausible.io/js/plausible.js"></script><?php } ?>
 
         <!-- SEO -->

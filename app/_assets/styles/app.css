@@ -275,7 +275,10 @@ a:active {
         background-color: var(--color-brand-charcoal);
         overflow: hidden;
         visibility: hidden;
-        transition: height 1s cubic-bezier(0.19, 1, 0.22, 1), 0.5s top, 1.5s visibility;
+        transition:
+            height 1s cubic-bezier(0.19, 1, 0.22, 1),
+            0.5s top,
+            1.5s visibility;
         z-index: -1;
     }
 
@@ -288,7 +291,9 @@ a:active {
 
     .nav__area a {
         opacity: 0;
-        transition: opacity 0.5s ease-in, color 0.2s linear;
+        transition:
+            opacity 0.5s ease-in,
+            color 0.2s linear;
     }
 
     .nav__area.isVisible a {
@@ -392,8 +397,9 @@ a:active {
 }
 
 .tier--media--hero {
-    background-image: linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.3)),
-                      url("../media/bg-hero.jpg");
+    background-image:
+        linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.3)),
+        url("../media/bg-hero.jpg");
 }
 
 /* ---------------------------------------------------------------------
@@ -441,7 +447,9 @@ a:active {
 
 .hamburger__line--mid {
     top: 19px;
-    transition: transform 0.3s linear, opacity 0.2s;
+    transition:
+        transform 0.3s linear,
+        opacity 0.2s;
 }
 
 .hamburger__line--bot {
@@ -467,7 +475,7 @@ a:active {
 ------------------------------------------------------------------------ */
 .hero {
     padding: 40px 20px;
-    min-height: 280px;
+    min-height: 240px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -489,7 +497,7 @@ a:active {
 
 @media (min-width: 560px) {
     .hero {
-        min-height: 300px;
+        min-height: 240px;
     }
 
     .hero__title--hasLogo picture {
@@ -499,12 +507,41 @@ a:active {
 
 @media (min-width: 960px) {
     .hero {
-        min-height: 320px;
+        min-height: 280px;
     }
 
     .hero__title {
         margin-bottom: 30px;
     }
+}
+
+/* ---------------------------------------------------------------------
+ Component - Poster
+------------------------------------------------------------------------ */
+.poster {
+    padding: 20px 20px;
+    background-color: var(--color-white);
+    border: 1px solid rgba(0,0,0,0.15);
+    box-shadow:
+        rgba(224, 27, 132, 0.3) 5px 5px,
+        rgba(224, 27, 132, 0.2) 10px 10px,
+        rgba(224, 27, 132, 0.1) 15px 15px,
+        rgba(224, 27, 132, 0.05) 20px 20px;
+}
+
+@media (min-width: 560px) {
+    .poster {
+        padding: 40px 50px;
+    }
+}
+
+/* ---------------------------------------------------------------------
+ Component - Form
+------------------------------------------------------------------------ */
+.form {}
+
+.form--quote {
+    min-height: 700px;
 }
 
 /* ---------------------------------------------------------------------
@@ -576,20 +613,26 @@ a:active {
     line-height: var(--lineHeight-one);
     text-transform: uppercase;
     letter-spacing: 2px;
-    text-shadow: -3px 2px 0 rgba(224,27,132,0.6), 2px -1px 0 rgba(18,187,242,0.6);
+    text-shadow:
+        -3px 2px 0 rgba(224,27,132,0.6),
+        2px -1px 0 rgba(18,187,242,0.6);
 }
 
 @media (min-width: 560px) {
     .txt--title {
         font-size: var(--fontSize-huge);
-        text-shadow: -4px 3px 0 rgba(224,27,132,0.6), 3px -2px 0 rgba(18,187,242,0.6);
+        text-shadow:
+            -4px 3px 0 rgba(224,27,132,0.6),
+            3px -2px 0 rgba(18,187,242,0.6);
     }
 }
 
 @media (min-width: 960px) {
     .txt--title {
         font-size: var(--fontSize-mega);
-        text-shadow: -5px 4px 0 rgba(224,27,132,0.6), 4px -3px 0 rgba(18,187,242,0.6);
+        text-shadow:
+            -5px 4px 0 rgba(224,27,132,0.6),
+            4px -3px 0 rgba(18,187,242,0.6);
     }
 }
 
