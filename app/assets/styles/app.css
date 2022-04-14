@@ -107,7 +107,12 @@ html {
 
 body {
     min-height: 100vh;
-    background-color: var(--color-brand-offwhite);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: normal;
+    background-image: linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.3)),
+                      url("../media/bg-hero.jpg");
     color: var(--color-brand-charcoal);
     font-family: var(--fontFamily-serif);
     font-size: var(--fontSize-md);
@@ -168,6 +173,19 @@ abbr {
 }
 
 /* ---------------------------------------------------------------------
+ Layout - Site
+------------------------------------------------------------------------ */
+.site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.site__main {
+    flex: 1;
+}
+
+/* ---------------------------------------------------------------------
  Layout - Tier
 ------------------------------------------------------------------------ */
 .tier {}
@@ -184,22 +202,6 @@ abbr {
     }
 }
 
-.tier--media {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-blend-mode: normal;
-}
-
-.tier--media--hero {
-    background-image: linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.3)),
-                      url("../media/bg-hero.jpg");
-}
-
-.tier--white {
-    background-color: var(--color-white);
-}
-
 /* ---------------------------------------------------------------------
  Layout - Wrapper
 ------------------------------------------------------------------------ */
@@ -209,15 +211,6 @@ abbr {
     max-width: 640px;
     margin: 0 auto;
     padding: 0 20px;
-}
-
-/* ---------------------------------------------------------------------
- Layout - Blocks
------------------------------------------------------------------------- */
-.blocks {}
-
-.blocks__item {
-    margin-bottom: 20px;
 }
 
 /* ---------------------------------------------------------------------
@@ -244,6 +237,18 @@ abbr {
     .infobar__list > * + * {
         padding-left: 45px;
     }
+}
+
+/* ---------------------------------------------------------------------
+ Component - Badge
+------------------------------------------------------------------------ */
+.badge__icon {
+    display: inline-block;
+    padding-right: 2px;
+}
+
+.badge__text {
+    display: inline-block;
 }
 
 /* ---------------------------------------------------------------------
@@ -276,76 +281,6 @@ abbr {
     }
 }
 
-/* ---------------------------------------------------------------------
- Component - Section
------------------------------------------------------------------------- */
-.section {
-    padding: 40px 0;
-}
-
-.section__hd {
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-.section__bd {}
-
-/* ---------------------------------------------------------------------
- Component - Feature
------------------------------------------------------------------------- */
-.feature {
-    position: relative;
-}
-
-.feature__icon {
-    position: absolute;
-    top: 35px;
-    left: 0;
-    height: 50px;
-    width: 50px;
-    line-height: 50px;
-    text-align: center;
-    border-radius: 50%;
-    background-color: var(--color-brand-charcoal);
-    color: var(--color-white);
-    box-shadow: 0 0 0 3px var(--color-brand-offwhite),
-                0 0 0 5px var(--color-brand-hot-pink);
-    transition: all 150ms ease-in;
-}
-
-.feature:hover .feature__icon {
-    box-shadow: 0 0 0 3px var(--color-brand-offwhite),
-            0 0 0 6px var(--color-brand-electric-blue);
-}
-
-.feature__content {
-    margin-left: 25px;
-    padding: 30px 50px 30px 50px;
-    background-color: var(--color-white);
-    box-shadow: 1px 1px 3px var(--color-brand-concrete);
-}
-
-.feature__content__hd {
-    margin-bottom: 15px;
-}
-
-.feature__content__ft {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid var(--color-brand-concrete);
-}
-
-/* ---------------------------------------------------------------------
- Component - Badge
------------------------------------------------------------------------- */
-.badge__icon {
-    display: inline-block;
-    padding-right: 2px;
-}
-
-.badge__text {
-    display: inline-block;
-}
 
 /* ---------------------------------------------------------------------
  Typography - Headings
@@ -369,44 +304,4 @@ abbr {
 
 @media (min-width: 520px) {
     .hdg--flex-lg2xl { font-size: var(--fontSize-xl); }
-}
-
-/* ---------------------------------------------------------------------
- Typography - Title
------------------------------------------------------------------------- */
-.title {
-    color: inherit;
-    font-family: var(--fontFamily-sans);
-    font-size: var(--fontSize-lg);
-    line-height: 1.2;
-    font-style: normal;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-
-/* ---------------------------------------------------------------------
- Typography - Content
------------------------------------------------------------------------- */
-.content > *:not(:last-child) {
-    margin-bottom: 1rem;
-}
-
-.content ul {
-    padding-right: 20px;
-    list-style-type: disc;
-}
-
-.content ul li {
-    margin-left: 1.7rem;
-}
-
-/* ---------------------------------------------------------------------
- Typography - Columns
------------------------------------------------------------------------- */
-@media (min-width: 520px) {
-    .cols--2 {
-        column-count: 2;
-    }
 }
